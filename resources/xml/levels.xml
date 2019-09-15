@@ -72,60 +72,96 @@
   <levels>
     <!-- LVL1 -->
     <level layer1="layers/blue.jpg" layer2="layers/fog.png" color="#002060" stars="30" music="tempested.mod">
-      <ship id="b1" y="200" t="2"/>
-      <loop count="2">
-        <wait t="2"/>
-        <call func="b1_triad"/>
-      </loop>
-      <ship id="b1" y="100" t="5"/>
-      <ship id="b1" y="300"/>
-      <ship id="b1" y="140" t="1.5"/>
-      <ship id="b1" y="260"/>
-      <ship id="b1" y="180" t="1.5"/>
-      <ship id="b1" y="220"/>
-      <wait t="2"/>
-      <loop count="2">
-        <call func="b1_triad"/>
-      </loop>
-      <ship id="b1" y="50" t="4"/>
-      <asteroid y="380" t="0.5"/>
-      <ship id="b1" y="250" t="1.5"/>
-      <ship id="b1" y="150" t="1.5"/>
-      <ship id="b1" y="350" t="1.5"/>
-      <ship id="b1c" y="200" t="1"/>
-      <asteroid y="130" t="2"/>
-      <asteroid y="280" t="0.5"/>
-      <asteroid y="70" t="0.5"/>
-      <asteroid y="200" t="0.5"/>
-      <ship id="m1" y="100" t="2"/>
-      <asteroid y="240" t="0.5"/>
-      <ship id="m1" y="300" t="2"/>
-      <asteroid y="180" t="0.5"/>
-      <asteroid y="320" t="0.5"/>
-      <ship id="m1" y="200" t="2"/>
-      <wait t="4"/>
-      <call func="b1_triad"/>
-      <loop count="2">
-        <ship id="b1" y="100" t="4.3"/>
-        <ship id="b1c" y="110" t="2.3"/>
-        <ship id="b1" y="200"/>
-        <ship id="b1c" y="280" t="1"/>
+      <tilemap width="20" height="27">
+8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8
+12 12 12 12 12 4  8  8  8  8 8  10 10  8  8  8  8  8  8  8
+0  0  0  0  0  9  8  8  8  8 8  10 10  8  8  8  8  8  8  8
+0  0  0  0  0  9  8  8  8  8 8  10 10  8  8  8  8  8  8  8
+0  0  0  0  0  4  12 8  8  8  8  8  8  8  8  8  8  8  8  8
+0  0  0  0  0  0  4  8  8  8  8  8  8  8  8  8  8  8  8  8
+0  0  0  0  0  0  0  4  8  8  8  8  8  8  8  8  8  8  8  8
+0  0  0  0  0  0  0  0  4 12 12 12 12 12 12 12 12 12 12 12
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0  0  0  0  0  2  11 11 1  2 11  1 10  0  0  0  0  0  0  0
+0  0  0  0  0  9  8  8  8  8 8  10 10  0  0  0  0  0  0  0
+0  0  0  0  0  9  8  8  8  8 8  10 10 11 11 11 11 11 11 11
+0  0  0  0  0  9  8  8  8  8 8  10 10  8  8  8  8  8  8  8
+11 11 11 11 11 4  12 12 12 12 12 12 3  8  8  8  8  8  8  8
+8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8
+      </tilemap>
+      <entities>
+        <ship id="b1" t="30"/>
+    </entities>
+    </level>
+    <level layer1="layers/blue.jpg" layer2="layers/fog.png" color="#002060" stars="30" music="tempested.mod">
+      <entities>
+        <ship id="b1" y="200" t="2"/>
+        <loop count="2">
+          <wait t="2"/>
+          <call func="b1_triad"/>
+        </loop>
+        <ship id="b1" y="100" t="5"/>
         <ship id="b1" y="300"/>
-        <ship id="b1" y="90" t="1"/>
-      </loop>
-      <call func="b1c_quint"/>
-      <ship id="b1" y="80" t="3"/>
-      <ship id="b1" y="280" t="1"/>
-      <ship id="b1" y="100" t="1"/>
-      <ship id="b1" y="100" t="1"/>
-      <ship id="b1" y="300" t="1"/>
-      <call func="b1_triad"/>
-      <wait t="2"/>
-      <ship id="b1c" y="50"/>
-      <call func="b1c_quint"/>
-      <ship id="b2c" y="200" t="5"/>
-      <ship id="b2c" y="150" t="2"/>
-      <ship id="b2c" y="250"/>
+        <ship id="b1" y="140" t="1.5"/>
+        <ship id="b1" y="260"/>
+        <ship id="b1" y="180" t="1.5"/>
+        <ship id="b1" y="220"/>
+        <wait t="2"/>
+        <loop count="2">
+          <call func="b1_triad"/>
+        </loop>
+        <ship id="b1" y="50" t="4"/>
+        <asteroid y="380" t="0.5"/>
+        <ship id="b1" y="250" t="1.5"/>
+        <ship id="b1" y="150" t="1.5"/>
+        <ship id="b1" y="350" t="1.5"/>
+        <ship id="b1c" y="200" t="1"/>
+        <asteroid y="130" t="2"/>
+        <asteroid y="280" t="0.5"/>
+        <asteroid y="70" t="0.5"/>
+        <asteroid y="200" t="0.5"/>
+        <ship id="m1" y="100" t="2"/>
+        <asteroid y="240" t="0.5"/>
+        <ship id="m1" y="300" t="2"/>
+        <asteroid y="180" t="0.5"/>
+        <asteroid y="320" t="0.5"/>
+        <ship id="m1" y="200" t="2"/>
+        <wait t="4"/>
+        <call func="b1_triad"/>
+        <loop count="2">
+          <ship id="b1" y="100" t="4.3"/>
+          <ship id="b1c" y="110" t="2.3"/>
+          <ship id="b1" y="200"/>
+          <ship id="b1c" y="280" t="1"/>
+          <ship id="b1" y="300"/>
+          <ship id="b1" y="90" t="1"/>
+        </loop>
+        <call func="b1c_quint"/>
+        <ship id="b1" y="80" t="3"/>
+        <ship id="b1" y="280" t="1"/>
+        <ship id="b1" y="100" t="1"/>
+        <ship id="b1" y="100" t="1"/>
+        <ship id="b1" y="300" t="1"/>
+        <call func="b1_triad"/>
+        <wait t="2"/>
+        <ship id="b1c" y="50"/>
+        <call func="b1c_quint"/>
+        <ship id="b2c" y="200" t="5"/>
+        <ship id="b2c" y="150" t="2"/>
+        <ship id="b2c" y="250"/>
+      </entities>
     </level>
 
     <!-- LVL2 -->
@@ -189,200 +225,209 @@
 
     <!-- LVL3 -->
     <level layer1="layers/mechanical.png" layer2="layers/mechanical-top.png" decor_height="24" music="6sievert.mod">
-      <ship id="b1" y="100" t="2"/>
-      <ship id="b1" y="150" />
-      <ship id="b1" y="200" t="2"/>
-      <ship id="b1" y="250" />
-      <ship id="b1" y="205" t="1"/>
-      <ship id="b1" y="290" t="1"/>
-      <decor id="gate" y="0" t="3"/>
-      <ship id="b2" y="200" t="7"/>
-      <ship id="b2" y="100" t="2"/>
-      <decor id="canon" t="2"/>
-      <decor id="canon" t="3"/>
-      <decor id="canon" t="3"/>
-      <ship id="b1" y="200" t="7"/>
-      <ship id="b1" y="100"/>
-      <call func="scoot_line_3"/>
-      <ship id="b2" y="200" t="4"/>
-      <ship id="b2" y="30" t="2"/>
-      <ship id="b1" y="180" t="2"/>
-      <ship id="b2" y="260" t="2"/>
-      <ship id="b1" y="290" t="2"/>
-      <ship id="m1" y="200"/>
-      <ship id="b2" y="100" t="1.2"/>
-      <ship id="b1" y="180" t="1.2"/>
-      <ship id="b2" y="100" t="1.2"/>
-      <ship id="b2" y="30" t="1.2"/>
-      <ship id="b2" y="260" t="1.2"/>
-      <wait t="4"/>
-      <loop count="2">
-        <ship id="b1c" y="90" t="1"/>
-        <ship id="b1c" y="120"/>
-        <ship id="b1c" y="150"/>
-        <ship id="b1c" y="180"/>
-      </loop>
-      <wait t="2"/>
-      <loop count="2">
-        <ship id="b1c" y="160" t="1"/>
-        <ship id="b1c" y="190"/>
-        <ship id="b1c" y="220"/>
-        <ship id="b1c" y="250"/>
-      </loop>
-      <wait t="2"/>
-      <loop count="2">
-        <ship id="b1c" y="240" t="1"/>
-        <ship id="b1c" y="270"/>
-        <ship id="b1c" y="300"/>
-        <ship id="b1c" y="330"/>
-      </loop>
-      <ship id="b2" y="140" t="6"/>
-      <ship id="b2" y="300" t="1.2"/>
-      <ship id="b2" y="220" t="1.2"/>
-      <ship id="m1" y="120"/>
-      <ship id="b1" y="300" t="1.2"/>
-      <ship id="b2" y="220" t="1.2"/>
-      <ship id="b2" y="280" t="1.2"/>
-      <ship id="b1" y="300" t="1.2"/>
-      <ship id="m1" y="50"/>
-      <ship id="b2" y="340" t="1.2"/>
-      <ship id="b1" y="180" t="1.2"/>
-      <ship id="b2" y="280" t="1.2"/>
-      <ship id="b1" y="300" t="1.2"/>
-      <ship id="b2" y="340" t="1.2"/>
-      <decor id="gate" y="0" t="1"/>
-      <ship id="b2" y="250" t="7"/>
-      <ship id="b2" y="100" t="3"/>
-      <ship id="b1" y="200"/>
-      <ship id="m1" y="350" t="1"/>
-      <ship id="b2" y="150"/>
-      <ship id="m1" y="130" t="3"/>
-      <loop count="3">
-        <ship id="b1" y="270" t="2"/>
-        <ship id="b2" y="100" t="0.5"/>
-      </loop>
-      <call func="c_scoot_line_3"/>
-      <decor id="gate" t="2"/>
-      <decor id="canon" t="3"/>
-      <wait t="2"/>
-      <call func="b2_triad"/>
+      <tilemap width="1" height="1">0</tilemap>
+      <entities>
+        <ship id="b1" y="100" t="2"/>
+        <ship id="b1" y="150" />
+        <ship id="b1" y="200" t="2"/>
+        <ship id="b1" y="250" />
+        <ship id="b1" y="205" t="1"/>
+        <ship id="b1" y="290" t="1"/>
+        <decor id="gate" y="0" t="3"/>
+        <ship id="b2" y="200" t="7"/>
+        <ship id="b2" y="100" t="2"/>
+        <decor id="canon" t="2"/>
+        <decor id="canon" t="3"/>
+        <decor id="canon" t="3"/>
+        <ship id="b1" y="200" t="7"/>
+        <ship id="b1" y="100"/>
+        <call func="scoot_line_3"/>
+        <ship id="b2" y="200" t="4"/>
+        <ship id="b2" y="30" t="2"/>
+        <ship id="b1" y="180" t="2"/>
+        <ship id="b2" y="260" t="2"/>
+        <ship id="b1" y="290" t="2"/>
+        <ship id="m1" y="200"/>
+        <ship id="b2" y="100" t="1.2"/>
+        <ship id="b1" y="180" t="1.2"/>
+        <ship id="b2" y="100" t="1.2"/>
+        <ship id="b2" y="30" t="1.2"/>
+        <ship id="b2" y="260" t="1.2"/>
+        <wait t="4"/>
+        <loop count="2">
+          <ship id="b1c" y="90" t="1"/>
+          <ship id="b1c" y="120"/>
+          <ship id="b1c" y="150"/>
+          <ship id="b1c" y="180"/>
+        </loop>
+        <wait t="2"/>
+        <loop count="2">
+          <ship id="b1c" y="160" t="1"/>
+          <ship id="b1c" y="190"/>
+          <ship id="b1c" y="220"/>
+          <ship id="b1c" y="250"/>
+        </loop>
+        <wait t="2"/>
+        <loop count="2">
+          <ship id="b1c" y="240" t="1"/>
+          <ship id="b1c" y="270"/>
+          <ship id="b1c" y="300"/>
+          <ship id="b1c" y="330"/>
+        </loop>
+        <ship id="b2" y="140" t="6"/>
+        <ship id="b2" y="300" t="1.2"/>
+        <ship id="b2" y="220" t="1.2"/>
+        <ship id="m1" y="120"/>
+        <ship id="b1" y="300" t="1.2"/>
+        <ship id="b2" y="220" t="1.2"/>
+        <ship id="b2" y="280" t="1.2"/>
+        <ship id="b1" y="300" t="1.2"/>
+        <ship id="m1" y="50"/>
+        <ship id="b2" y="340" t="1.2"/>
+        <ship id="b1" y="180" t="1.2"/>
+        <ship id="b2" y="280" t="1.2"/>
+        <ship id="b1" y="300" t="1.2"/>
+        <ship id="b2" y="340" t="1.2"/>
+        <decor id="gate" y="0" t="1"/>
+        <ship id="b2" y="250" t="7"/>
+        <ship id="b2" y="100" t="3"/>
+        <ship id="b1" y="200"/>
+        <ship id="m1" y="350" t="1"/>
+        <ship id="b2" y="150"/>
+        <ship id="m1" y="130" t="3"/>
+        <loop count="3">
+          <ship id="b1" y="270" t="2"/>
+          <ship id="b2" y="100" t="0.5"/>
+        </loop>
+        <call func="c_scoot_line_3"/>
+        <decor id="gate" t="2"/>
+        <decor id="canon" t="3"/>
+        <wait t="2"/>
+        <call func="b2_triad"/>
+      </entities>
     </level>
 
     <!-- LVL4 -->
     <level layer1="layers/mechanical.png" layer2="layers/mechanical-top.png" decor_height="24" music="virtual_journey.mod">
-      <ship id="m1" y="120" t="1"/>
-      <decor id="guntower" t="2"/>
-      <ship id="b1" y="200" t="5"/>
-      <ship id="b2" y="60" t="1"/>
-      <ship id="b2" y="80" t="2"/>
-      <ship id="b1" y="305" t="1"/>
-      <ship id="b2" y="142" t="2"/>
-      <ship id="b1" y="236" t="2"/>
-      <decor id="gate" t="2"/>
-      <ship id="b2" y="200" t="6"/>
-      <ship id="b2" y="240" t="2"/>
-      <ship id="b2" y="160"/>
-      <wait t="4"/>
-      <call func="interceptors_5"/>
-      <decor id="gate" t="2"/>
-      <ship id="b2" y="200" t="7"/>
-      <ship id="b2" y="240" t="2"/>
-      <decor id="guntower" />
-      <ship id="b2" y="160"/>
-      <wait t="5"/>
-      <call func="scoot_line_3"/>
-      <wait t="2"/>
-      <call func="scoot_line_5"/>
-      <wait t="2"/>
-      <call func="scoot_line_5"/>
-      <ship id="m1" y="123" t="1"/>
-      <ship id="b1" y="200" t="4.0"/>
-      <ship id="b1" y="230" t="1"/>
-      <ship id="m1" y="30"/>
-      <ship id="b1" y="200" t="1"/>
-      <ship id="b1" y="280" t="1"/>
-      <ship id="m1" y="150" />
-      <decor id="canon" t="1"/>
-      <loop count="3">
-        <decor id="canon" t="2"/>
-      </loop>
-      <wait t="6"/>
-      <loop count="2">
-        <ship id="b1" y="130" t="1.5"/>
-        <ship id="b1" y="160" t="1"/>
-        <ship id="m1" y="100" t="0.5"/>
-        <ship id="b1" y="130" t="1"/>
-        <ship id="b1" y="160" t="1"/>
-        <ship id="m1" y="100" t="0.5"/>
-        <ship id="m1" y="220" t="0.5"/>
-      </loop>
-      <wait t="2"/>
-      <call func="b2_triad"/>
-      <loop count="2">
-        <wait t="3"/>
+      <tilemap width="1" height="1">0</tilemap>
+      <entities>
+        <ship id="m1" y="120" t="1"/>
+        <decor id="guntower" t="2"/>
+        <ship id="b1" y="200" t="5"/>
+        <ship id="b2" y="60" t="1"/>
+        <ship id="b2" y="80" t="2"/>
+        <ship id="b1" y="305" t="1"/>
+        <ship id="b2" y="142" t="2"/>
+        <ship id="b1" y="236" t="2"/>
+        <decor id="gate" t="2"/>
+        <ship id="b2" y="200" t="6"/>
+        <ship id="b2" y="240" t="2"/>
+        <ship id="b2" y="160"/>
+        <wait t="4"/>
         <call func="interceptors_5"/>
-      </loop>
-      <decor id="gate" y="0" t="1"/>
-      <ship id="b2" y="200" t="6"/>
-      <ship id="b2" y="240" t="2"/>
-      <ship id="b2" y="160"/>
-      <wait t="5"/>
-      <call func="interceptors_5"/>
-      <boss id="tentaculat" y="210" t="10"/>
+        <decor id="gate" t="2"/>
+        <ship id="b2" y="200" t="7"/>
+        <ship id="b2" y="240" t="2"/>
+        <decor id="guntower" />
+        <ship id="b2" y="160"/>
+        <wait t="5"/>
+        <call func="scoot_line_3"/>
+        <wait t="2"/>
+        <call func="scoot_line_5"/>
+        <wait t="2"/>
+        <call func="scoot_line_5"/>
+        <ship id="m1" y="123" t="1"/>
+        <ship id="b1" y="200" t="4.0"/>
+        <ship id="b1" y="230" t="1"/>
+        <ship id="m1" y="30"/>
+        <ship id="b1" y="200" t="1"/>
+        <ship id="b1" y="280" t="1"/>
+        <ship id="m1" y="150" />
+        <decor id="canon" t="1"/>
+        <loop count="3">
+          <decor id="canon" t="2"/>
+        </loop>
+        <wait t="6"/>
+        <loop count="2">
+          <ship id="b1" y="130" t="1.5"/>
+          <ship id="b1" y="160" t="1"/>
+          <ship id="m1" y="100" t="0.5"/>
+          <ship id="b1" y="130" t="1"/>
+          <ship id="b1" y="160" t="1"/>
+          <ship id="m1" y="100" t="0.5"/>
+          <ship id="m1" y="220" t="0.5"/>
+        </loop>
+        <wait t="2"/>
+        <call func="b2_triad"/>
+        <loop count="2">
+          <wait t="3"/>
+          <call func="interceptors_5"/>
+        </loop>
+        <decor id="gate" y="0" t="1"/>
+        <ship id="b2" y="200" t="6"/>
+        <ship id="b2" y="240" t="2"/>
+        <ship id="b2" y="160"/>
+        <wait t="5"/>
+        <call func="interceptors_5"/>
+        <boss id="tentaculat" y="210" t="10"/>
+      </entities>
     </level>
 
     <!-- LVL5 (scoot pyramids) -->
     <level layer1="layers/purple.jpg" layer2="layers/fog.png" stars="50" color="#150005" music="hungry.mod">
-      <asteroid y="100" t="1.0"/>
-      <asteroid y="170" t="0.5"/>
-      <asteroid y="360" t="0.5"/>
-      <asteroid y="267" t="0.5"/>
-      <ship id="b1" y="200" t="4"/>
-      <call func="scoot_line_3"/>
-      <call func="scoot_line_5"/>
-      <call func="scoot_line_7"/>
-      <call func="scoot_line_5"/>
-      <ship id="b1" y="200" t="2"/>
-      <loop count="2">
-        <ship id="b2" y="100" t="3"/>
-        <ship id="b2" y="280"/>
-        <ship id="s1" y="140" t="2"/>
-        <ship id="s1" y="310"/>
-      </loop>
-      <ship id="b1" y="200" t="6"/>
-      <call func="scoot_line_3"/>
-      <call func="scoot_line_5"/>
-      <call func="scoot_line_7"/>
-      <ship id="s1" y="320" t="1"/>
-      <ship id="s1" y="70" t="1"/>
-      <ship id="s1" y="230" t="1"/>
-      <ship id="s1" y="160" t="2"/>
-      <wait t="2"/>
-      <call func="interceptors_5"/>
-      <ship id="m1" y="120" t="1" />
-      <ship id="m1" y="320" t="1" />
-      <ship id="m1" y="200" t="2" />
-      <loop count="2">
+      <tilemap width="1" height="1">0</tilemap>
+      <entities>
+        <asteroid y="100" t="1.0"/>
+        <asteroid y="170" t="0.5"/>
+        <asteroid y="360" t="0.5"/>
+        <asteroid y="267" t="0.5"/>
+        <ship id="b1" y="200" t="4"/>
+        <call func="scoot_line_3"/>
+        <call func="scoot_line_5"/>
+        <call func="scoot_line_7"/>
+        <call func="scoot_line_5"/>
+        <ship id="b1" y="200" t="2"/>
+        <loop count="2">
+          <ship id="b2" y="100" t="3"/>
+          <ship id="b2" y="280"/>
+          <ship id="s1" y="140" t="2"/>
+          <ship id="s1" y="310"/>
+        </loop>
         <ship id="b1" y="200" t="6"/>
         <call func="scoot_line_3"/>
         <call func="scoot_line_5"/>
         <call func="scoot_line_7"/>
-      </loop>
-      <ship id="m1" y="20" t="4" />
-      <ship id="m1" y="340" t="1" />
-      <ship id="m1" y="100" t="2" />
-      <wait t="6"/>
-      <call func="interceptors_5" />
-      <wait t="4" />
-      <call func="interceptors_7"/>
-      <ship id="s1" y="230" t="4"/>
-      <ship id="s1" y="240" t="1"/>
-      <ship id="s1" y="310" t="2"/>
-      <ship id="s1" y="100" t="1"/>
-      <ship id="s1" y="150" t="2"/>
-      <call func="b2_triad"/>
-      <boss id="tentaculat" y="120" t="5"/>
-      <boss id="tentaculat" y="290" t="10"/>
+        <ship id="s1" y="320" t="1"/>
+        <ship id="s1" y="70" t="1"/>
+        <ship id="s1" y="230" t="1"/>
+        <ship id="s1" y="160" t="2"/>
+        <wait t="2"/>
+        <call func="interceptors_5"/>
+        <ship id="m1" y="120" t="1" />
+        <ship id="m1" y="320" t="1" />
+        <ship id="m1" y="200" t="2" />
+        <loop count="2">
+          <ship id="b1" y="200" t="6"/>
+          <call func="scoot_line_3"/>
+          <call func="scoot_line_5"/>
+          <call func="scoot_line_7"/>
+        </loop>
+        <ship id="m1" y="20" t="4" />
+        <ship id="m1" y="340" t="1" />
+        <ship id="m1" y="100" t="2" />
+        <wait t="6"/>
+        <call func="interceptors_5" />
+        <wait t="4" />
+        <call func="interceptors_7"/>
+        <ship id="s1" y="230" t="4"/>
+        <ship id="s1" y="240" t="1"/>
+        <ship id="s1" y="310" t="2"/>
+        <ship id="s1" y="100" t="1"/>
+        <ship id="s1" y="150" t="2"/>
+        <call func="b2_triad"/>
+        <boss id="tentaculat" y="120" t="5"/>
+        <boss id="tentaculat" y="290" t="10"/>
+      </entities>
     </level>
 
     <!-- LVL6 (saucers) -->

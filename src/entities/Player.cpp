@@ -518,7 +518,7 @@ void Player::setMaxHP(int hp)
 
 void Player::setSpeed(float speed)
 {
-    m_speed = speed;
+    m_speed = 100;
 }
 
 

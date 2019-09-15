@@ -21,6 +21,7 @@ public:
 
     void onCollision(Damageable& entity);
     void onCollision(Projectile& projectile);
+    void onTileCollision(int tile);
     void onDestroy();
 
     void initDamageFlash();

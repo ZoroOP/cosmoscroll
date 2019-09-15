@@ -75,14 +75,37 @@ void LevelManager::initCurrentLevel()
 {
     resetSpawnQueue();
 
-    const tinyxml2::XMLElement* elem = getCurrentLevelElement()->FirstChildElement();
-    while (elem)
+    const tinyxml2::XMLElement* entities = getCurrentLevelElement()->FirstChildElement("entities");
+    if (entities == nullptr)
     {
-        parseEntities(elem);
-        elem = elem->NextSiblingElement();
+        std::cerr << "[levels] missing <entities> tag" << std::endl;
+    }
+    else
+    {
+        const tinyxml2::XMLElement* elem = entities->FirstChildElement();
+        while (elem)
+        {
+            parseEntities(elem);
+            elem = elem->NextSiblingElement();
+        }
     }
 }
 
+
+sf::Vector2u LevelManager::getTilemapSize() const
+{
+    // Parse 'width' and 'height' attributes from <tilemap>
+    sf::Vector2u size;
+    const tinyxml2::XMLElement* tilemap = getCurrentLevelElement()->FirstChildElement("tilemap");
+    tilemap->QueryUnsignedAttribute("width", &size.x);
+    tilemap->QueryUnsignedAttribute("height", &size.y);
+    return size;
+}
+
+const char* LevelManager::getTilemapData() const
+{
+    return getCurrentLevelElement()->FirstChildElement("tilemap")->GetText();
+}
 
 Entity* LevelManager::spawnNextEntity(float elapsed_time)
 {

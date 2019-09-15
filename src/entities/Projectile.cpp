@@ -3,10 +3,10 @@
 #include "utils/StringUtils.hpp"
 
 
-Projectile::Projectile(Entity* emitter, float angle, const sf::Texture& image, int speed, int damage):
+Projectile::Projectile(Entity* emitter, float angle, const sf::Texture& texture, int speed, int damage):
     m_damage(damage)
 {
-    setTexture(image);
+    setTexture(texture);
     setTeam(emitter->getTeam());
     setRotation(-math::to_degrees(angle));
 

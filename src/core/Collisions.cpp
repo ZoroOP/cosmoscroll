@@ -24,8 +24,8 @@ bool Collisions::pixelPerfectTest(const sf::Sprite& a, const sf::Sprite& b)
         if (a.getTexture() == NULL || b.getTexture() == NULL)
             return true;
 
-        const sf::Image& img_a = images_[a.getTexture()];
-        const sf::Image& img_b = images_[b.getTexture()];
+        const sf::Image& img_a = images_.at(a.getTexture());
+        const sf::Image& img_b = images_.at(b.getTexture());
 
         const int ALPHA = 0;
 
@@ -35,8 +35,8 @@ bool Collisions::pixelPerfectTest(const sf::Sprite& a, const sf::Sprite& b)
         int left2 = overlap.left - rect_b.left + b.getTextureRect().left;
         int top2 =  overlap.top  - rect_b.top  + b.getTextureRect().top;
 
-        const sf::Uint8 *pix_a = img_a.getPixelsPtr();
-        const sf::Uint8 *pix_b = img_b.getPixelsPtr();
+        const sf::Uint8* pix_a = img_a.getPixelsPtr();
+        const sf::Uint8* pix_b = img_b.getPixelsPtr();
 
         int width_a = img_a.getSize().x;
         int width_b = img_b.getSize().x;

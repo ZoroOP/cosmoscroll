@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <iostream>
+#include <sstream>
 #include <cassert>
 #include "EntityManager.hpp"
 #include "Asteroid.hpp"
@@ -84,6 +85,10 @@ EntityManager::EntityManager():
     m_impact_emitter.setLifetime(3);
 
     m_green_emitter.setTextureRect(sf::IntRect(40, 8, 8, 8));
+
+    m_tileset.setTileSize({16, 16});
+    m_tileset.loadTexture("resources/images/tilemap.png");
+    Collisions::registerTexture(&m_tileset.getTexture());
 }
 
 
@@ -95,6 +100,7 @@ EntityManager::~EntityManager()
 
 void EntityManager::initialize()
 {
+    puts("EntityManager::initialize()");
     // re-init particles
     m_particles.clear();
     MessageSystem::clear();
@@ -150,6 +156,16 @@ void EntityManager::initialize()
     {
         SoundSystem::stopMusic();
     }
+    // Initialize tilemap
+    sf::Vector2u tilemap_size = m_levels.getTilemapSize();
+    std::vector<unsigned int> tiles;
+    tiles.reserve(tilemap_size.x * tilemap_size.y);
+    std::istringstream iss(m_levels.getTilemapData());
+    size_t index = 0;
+    while (iss) {
+        iss >> tiles[index++];
+    }
+    m_tilemap.load(m_tileset, &tiles[0], tilemap_size.x, tilemap_size.y);
 
     m_timer = 0.f;
 }
@@ -187,6 +203,15 @@ void EntityManager::update(float frametime)
         }
         else
         {
+            // Tilemap collision
+            sf::Sprite sprite;
+            if (m_tilemap.collides(box, sprite))
+            {
+                if (Collisions::pixelPerfectTest(entity, sprite))
+                {
+                    (**it).onTileCollision(1);
+                }
+            }
             it2 = it;
             for (++it2; it2 != m_entities.end(); ++it2)
             {
@@ -259,8 +284,13 @@ void EntityManager::draw(sf::RenderTarget& target, sf::RenderStates states) cons
     target.draw(m_layer1, states);
     target.draw(m_layer2, states);
 
+
     // Draw effects
     target.draw(m_particles, states);
+
+    // Draw tilemap
+    target.draw(m_tilemap, states);
+
     MessageSystem::show(target, states);
 
     // Draw managed entities
@@ -509,6 +539,7 @@ bool EntityManager::spawnEntities()
 
 void EntityManager::respawnPlayer()
 {
+    puts("EntityManager::respawnPlayer()");
     clearEntities();
     m_player = new Player();
     m_player->setPosition(50, m_height / 2);

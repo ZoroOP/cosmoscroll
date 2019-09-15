@@ -28,6 +28,10 @@ public:
      */
     void initCurrentLevel();
 
+    sf::Vector2u getTilemapSize() const;
+
+    const char* getTilemapData() const;
+
     /**
      * Spawn the next entity in the current level
      * @param elapsed_time: elapsed time in seconds in the level

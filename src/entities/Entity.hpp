@@ -62,6 +62,7 @@ public:
     virtual void onCollision(Damageable&) {}
     virtual void onCollision(PowerUp&)    {}
     virtual void onCollision(Projectile&) {}
+    virtual void onTileCollision(int) {};
 
     // helpers -----------------------------------------------------------------
 

@@ -11,6 +11,8 @@
 #include "Animation.hpp"
 #include "Spaceship.hpp"
 #include "core/ParticleSystem.hpp"
+#include "core/Tileset.hpp"
+#include "core/Tilemap.hpp"
 
 class LevelManager;
 class Entity;
@@ -184,6 +186,9 @@ private:
 
     ParallaxLayer m_layer1;
     ParallaxLayer m_layer2;
+
+    Tileset m_tileset;
+    Tilemap m_tilemap;
 };
 
 #endif // ENTITYMANAGER_HPP

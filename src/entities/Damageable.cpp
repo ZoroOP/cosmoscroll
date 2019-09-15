@@ -43,6 +43,12 @@ void Damageable::onCollision(Projectile& projectile)
 }
 
 
+void Damageable::onTileCollision(int tile)
+{
+    takeDamage(1);
+}
+
+
 void Damageable::onDestroy()
 {
     Explosion* explosion = new Explosion;

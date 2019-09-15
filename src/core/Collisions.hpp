@@ -22,6 +22,8 @@ public:
      */
     static bool pixelPerfectTest(const sf::Sprite& a, const sf::Sprite& b);
 
+    static bool pixelPerfectTest(const sf::Sprite& sprite, const sf::FloatRect& area);
+
 private:
     typedef std::map<const sf::Texture*, sf::Image> ImageMap;
 
